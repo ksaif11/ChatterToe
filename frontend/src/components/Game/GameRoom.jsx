@@ -23,7 +23,9 @@ const GameRoom = () => {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    const newSocket = io('http://localhost:5000');
+    const newSocket = io('https://chattertoe.onrender.com',{
+      transports: ['websocket'],
+    });
     setSocket(newSocket);
 
     newSocket.emit('join-room', { roomKey, userId });

@@ -34,7 +34,7 @@ const ChatSidebar = ({ socket, roomKey, username, onClose, messages, userName })
       <div className="chat-messages">
         {messages.map((msg, index) => (
           <div key={index} className="chat-message">
-            <strong>{msg.username}:</strong> <span>{msg.message}</span>
+            <span>-- {msg.message}</span>
           </div>
         ))}
         <div ref={messageRef}/>
