@@ -12,7 +12,7 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/auth/register', { username, password });
+      await axios.post('https://chattertoe.onrender.com/api/auth/register', { username, password });
       navigate('/login');
     } catch (error) {
       setError('Registration failed. Try a different username.');

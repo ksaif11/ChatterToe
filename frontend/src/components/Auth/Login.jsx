@@ -12,7 +12,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/auth/login', { username, password });
+      const response = await axios.post('https://chattertoe.onrender.com/api/auth/login', { username, password });
       const { token, userId } = response.data;
       sessionStorage.setItem('token', token);
       sessionStorage.setItem('userId', userId);

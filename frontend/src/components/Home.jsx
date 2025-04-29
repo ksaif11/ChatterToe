@@ -26,7 +26,7 @@ const Home = () => {
     }
 
     try {
-      const response = await axios.post('/api/game/create', { userId });
+      const response = await axios.post('https://chattertoe.onrender.com/api/game/create', { userId });
       navigate(`/game/${response.data.roomKey}`);
     } catch (err) {
       console.error('Error creating game:', err);
@@ -46,7 +46,7 @@ const Home = () => {
     }
 
     try {
-      await axios.post('/api/game/join', { roomKey, userId });
+      await axios.post('https://chattertoe.onrender.com/api/game/join', { roomKey, userId });
       navigate(`/game/${roomKey}`);
     } catch (err) {
       alert('Invalid room key or failed to join the game.');
